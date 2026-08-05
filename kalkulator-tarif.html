@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Estimasi Harga Antar-Jemput</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="logo-container">
+        <img src="asset/logo.jpeg" alt="Logo Anjem District" class="main-logo">
+    </div>
+    <h1>Estimasi Harga <br>Anjem District UNTIDAR</h1>
+
+    <div class="form-group">
+        <label for="distance">Jarak Perjalanan (km)</label>
+        <div class="input-wrapper">
+            <input type="number" id="distance" min="0.1" step="0.1" placeholder="Masukkan jarak..." required>
+            <span>km</span>
+        </div>
+        <div class="input-hint">contoh : 1.5 atau 2,5</div>
+        <div class="error-message" id="distance-error">Silakan masukkan jarak yang valid (minimal 0.1 km).</div>
+    </div>
+
+    <label>Kondisi Khusus (Opsional)</label>
+    <div class="options-grid">
+        <label class="option-card">
+            <input type="checkbox" id="option-rain" value="2000">
+            <div class="option-content">
+                <div class="option-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path>
+                        <path d="M16 14v6"></path>
+                        <path d="M8 14v6"></path>
+                        <path d="M12 16v6"></path>
+                    </svg>
+                </div>
+                <div class="option-title">Hujan</div>
+                <div class="option-price">+Rp2.000</div>
+            </div>
+        </label>
+
+        <label class="option-card">
+            <input type="checkbox" id="option-night" value="1000">
+            <div class="option-content">
+                <div class="option-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                    </svg>
+                </div>
+                <div class="option-title">Malam Hari</div>
+                <div class="option-price">> 21.00 (+Rp1.000)</div>
+            </div>
+        </label>
+    </div>
+
+    <div class="result-container" id="result-container">
+        <div class="total-row">
+            <span class="total-label">Total Estimasi</span>
+            <span class="total-amount" id="cost-total">Rp0</span>
+        </div>
+        <p class="disclaimer-text">
+            *Harga ini berupa estimasi. Faktor cuaca, waktu, dan kondisi lain dapat mempengaruhi perubahan harga.
+            Silakan tanyakan ke driver untuk detail pastinya.
+        </p>
+    </div>
+
+    <div class="social-container">
+        <div class="motto-container">
+            <p class="motto">"MAHASISWA BANTU MAHASISWA"</p>
+        </div>
+        <a href="https://www.instagram.com/anjem.district.untidar?igsh=MWt0OW1idzZ3aTNhNQ==" target="_blank"
+            rel="noopener noreferrer" class="btn-instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            Kunjungi Instagram Kami
+        </a>
+    </div>
+
+    <div class="footer">
+        <p class="copyright">© 2026 Anjem District UNTIDAR. All rights reserved.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
