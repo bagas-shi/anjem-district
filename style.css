@@ -92,6 +92,47 @@ input[type="number"]:focus {
     margin-bottom: 8px;
 }
 
+/* ==============================
+   Vehicle Toggle
+============================== */
+.vehicle-toggle {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.vehicle-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    background-color: var(--accent-bg);
+    color: var(--text-muted);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.vehicle-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.vehicle-btn.active {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    box-shadow: 0 4px 12px rgba(2, 51, 136, 0.3);
+}
+
+
+
 .option-card {
     position: relative;
     cursor: pointer;
