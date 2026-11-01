@@ -28,6 +28,7 @@ function setVehicle(type) {
         // Reset radio kos-type
         const checkedKos = document.querySelector('input[name="kos-type"]:checked');
         if (checkedKos) checkedKos.checked = false;
+        selectedKosRadio = null;
     }
 
     // Hitung ulang estimasi
@@ -190,5 +191,18 @@ document.getElementById('option-rain').addEventListener('change', calculateEstim
 document.getElementById('option-night').addEventListener('change', calculateEstimate);
 document.getElementById('mobil-option-night').addEventListener('change', calculateEstimate);
 document.getElementById('mobil-option-rain').addEventListener('change', calculateEstimate);
-document.getElementById('mobil-option-kos-ringan').addEventListener('change', calculateEstimate);
-document.getElementById('mobil-option-kos-berat').addEventListener('change', calculateEstimate);
+
+// Radio pindahan kos yang bisa di-uncheck jika diklik kembali
+let selectedKosRadio = null;
+const kosRadios = document.querySelectorAll('input[name="kos-type"]');
+kosRadios.forEach(radio => {
+    radio.addEventListener('click', function () {
+        if (selectedKosRadio === this) {
+            this.checked = false;
+            selectedKosRadio = null;
+        } else {
+            selectedKosRadio = this;
+        }
+        calculateEstimate();
+    });
+});
