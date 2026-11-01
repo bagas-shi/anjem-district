@@ -25,8 +25,9 @@ function setVehicle(type) {
         kondisiMobilContainer.style.display = 'none';
         document.getElementById('mobil-option-night').checked = false;
         document.getElementById('mobil-option-rain').checked = false;
-        document.getElementById('mobil-option-kos-ringan').checked = false;
-        document.getElementById('mobil-option-kos-berat').checked = false;
+        // Reset radio kos-type
+        const checkedKos = document.querySelector('input[name="kos-type"]:checked');
+        if (checkedKos) checkedKos.checked = false;
     }
 
     // Hitung ulang estimasi
@@ -169,11 +170,9 @@ function calculateEstimate() {
         const isMobilRain = document.getElementById('mobil-option-rain').checked;
         if (isMobilRain) extraCost += 3000;
 
-        const isKosRingan = document.getElementById('mobil-option-kos-ringan').checked;
-        if (isKosRingan) extraCost += 30000;
-
-        const isKosBerat = document.getElementById('mobil-option-kos-berat').checked;
-        if (isKosBerat) extraCost += 60000;
+        // Radio: hanya salah satu kos yang bisa terpilih
+        const selectedKos = document.querySelector('input[name="kos-type"]:checked');
+        if (selectedKos) extraCost += parseInt(selectedKos.value);
     }
 
 
